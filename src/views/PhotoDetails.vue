@@ -1,9 +1,9 @@
 <template lang='pug'>
 Header(:navLinks=`[
-				{ target: '/favorites', icon: 'heart', text: 'Избранное' },
-				{ target: '/', icon: 'search', text: 'Поиск' }
-			]`,
-			size='small')
+	{ target: '/favorites', icon: 'heart', text: 'Избранное' },
+	{ target: '/', icon: 'search', text: 'Поиск' }
+]`,
+size='small')
 main(:style='{ "--background": `url(\'${photoURL}\')` }')
 	h2 {{ photoName }}
 	article(v-if='author')
@@ -186,6 +186,7 @@ function Download() {
 }
 
 onMounted(() => {
+	document.title = `San Francisco Art Gallery`
 	unsplash.photos.get({
 		photoId: router.currentRoute.value.params.id as string
 	})
@@ -193,8 +194,10 @@ onMounted(() => {
 			photoURL.value = _.response?.urls.raw ?? ''
 			photoName.value = _.response?.alt_description ?? ''
 			author.value = _.response?.user
+			document.title = `San Francisco Art Gallery - ${photoName.value}`
 		})
 	isFavorited.value = JSON.parse(localStorage.getItem('favorites') || '[]').includes(router.currentRoute.value.params.id)
+
 })
 
 </script>

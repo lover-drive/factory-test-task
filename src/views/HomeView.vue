@@ -3,7 +3,7 @@ Header(:navLinks=`[
 	{ target: '/favorites', icon: 'heart', text: 'Избранное' }
 ]`)
 
-search
+#search
 	form(@submit='OnSearchFormSubmit')
 		TextField(v-model='currentQuery')
 		button Искать
@@ -13,7 +13,7 @@ main#photos
 </template>
 
 <style lang='sass' scoped>
-search
+#search
 	display: block
 	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("~@/assets/bg_search.jpg")
 	padding: 5.75rem
@@ -133,6 +133,7 @@ onMounted(() => {
 	else LoadRandom()
 
 	window.addEventListener('scroll', OnScroll)
+	document.title = 'San Francisco Art Gallery'
 })
 
 onBeforeUnmount(() => {

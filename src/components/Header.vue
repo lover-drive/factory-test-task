@@ -5,7 +5,7 @@ header(:class='[size]')
 	nav
 		ul
 			li(v-for='link in navLinks')
-				router-link(:to='link.target' :style='{ "--icon-url": `url(\'/images/icons/${link.icon}.svg\')` }') {{ link.text }}
+				router-link(:to='link.target' :style='{ "--icon-url": `url(\'/factory/images/icons/${link.icon}.svg\')` }') {{ link.text }}
 </template>
 
 <style lang='sass' scoped>

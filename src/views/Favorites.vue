@@ -38,5 +38,6 @@ onMounted(async () => {
 	var favorites: string[] = JSON.parse(localStorage.getItem('favorites') || '[]')
 	var requests = await Promise.all(favorites.map(_ => unsplash.photos.get({ photoId: _ })))
 	photos.value = requests.map(_ => _.response)
+	document.title = 'San Francisco Art Gallery - Избранное'
 })
 </script>
