@@ -1,0 +1,47 @@
+@import "reset";
+
+body {
+	--content-width: 91.125rem;
+}
+
+$content-width: 91.125rem;
+
+body {
+	font-family: Roboto;
+}
+
+//============
+// Header
+//============
+
+
+
+nav.pagination {
+	max-width: $content-width;
+	margin: 0 auto;
+	margin-bottom: 7.125rem;
+}
+
+nav.pagination ul {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	li {
+		margin: 0 .25rem;
+	}
+	
+	a {
+		display: block;
+		min-width: 2rem;
+		text-align: center;
+	}
+
+	a.active {
+		color: inherit;
+		font-weight: bold;
+		font-size: 150%;
+		pointer-events: none;
+	}
+}
